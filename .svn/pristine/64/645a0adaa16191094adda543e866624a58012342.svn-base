@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "填写个人信息",
+  "usingComponents": {
+    "attachment": "/pages/subPages/attachment/attachment",
+    "baseinfo": "/pages/subPages/baseinfo/baseinfo",
+    "family": "/pages/subPages/family/family",
+    "workeducation": "/pages/subPages/workeducation/workeducation"
+  }
+}

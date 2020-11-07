@@ -1,0 +1,10 @@
+<!--pages/offer/offer.wxml-->
+<van-panel title="很高兴遇见你" descr="详细描述信息" status="未确认" use-footer-slot>
+  <view> <text decode="true">&nbsp;&nbsp;&nbsp;杨柳青，由于您出众的专业能力和优秀的综合素质，已经通过公司的面试考核，成为公司的一员，我们对您加入鸿坤集团大家庭表示热烈的欢迎！</text>
+  </view>
+  <view><text decode="true">&nbsp;&nbsp;&nbsp;详情见附件，请于2020-09-14前点击以下按钮，确认是否接受offer并填写个人信息。</text> </view>
+  <view slot="footer" position="right">
+    <van-button size="small" type="primary">同意offer</van-button>
+    <van-button size="small" type="danger" position="right">拒绝offer</van-button>
+  </view>
+</van-panel>

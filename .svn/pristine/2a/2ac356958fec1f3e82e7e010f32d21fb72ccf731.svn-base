@@ -1,0 +1,10 @@
+/* pages/subPages/workeducation/workeducation.wxss */
+.c-page-wrapper{
+  background:lightblue;
+}
+.item{
+  height:200rpx;
+  text-align: center;
+  padding: 20px;
+  line-height: 200rpx;
+}

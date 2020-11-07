@@ -1,0 +1,114 @@
+<!--pages/subPages/baseinfo/baseinfo.wxml-->
+<view>
+  <van-field value="{{firstNameChs}}" placeholder="例如：周" required name="firstNameChs" clearable 
+    label="姓氏" border="{{false}}" bind:change="onChange" bind:click-icon="onClickIcon" border></van-field>
+  <van-field value="{{lastNameChs}}" placeholder="例如：杰伦" name="lastNameChs" required clearable 
+    label="名" border="{{false}}" bind:change="onChange" bind:click-icon="onClickIcon" border></van-field>
+  <van-field value="{{firstNamePY}}" placeholder="例如：zhou" required name="firstNamePY" clearable 
+    label="拼音姓" border="{{false}}" bind:change="onChange" bind:click-icon="onClickIcon" border></van-field>
+  <van-field value="{{lastNamePY}}" placeholder="例如：jielun" name="lastNamePY" required clearable 
+    label="拼音名" border="{{false}}" bind:change="onChange" bind:click-icon="onClickIcon" border></van-field>
+
+  <!-- 性别选择框 -->
+  <van-cell title="性别" is-link bindtap="showPopup" value="{{sexValue}}" required />
+  <van-action-sheet show="{{ show }}" actions="{{ sexActions }}" bind:close="onClose" bind:select="sexonSelect" />
+  <!-- 民族选择框 -->
+  <van-cell title="民族" is-link bindtap="ethShowPopup" value="{{ethValue}}" required />
+  <van-action-sheet show="{{ ethShow }}" actions="{{ ethActions }}" bind:close="onClose" bind:select="ethonSelect" />
+  <!-- 户口所在地选择框 -->
+  <van-cell title="户口所在地" is-link bindtap="HuKouShowPopup" value="{{HuKouValue}}" required />
+  <van-action-sheet show="{{ HuKouShow }}" actions="{{ HuKouActions }}" bind:close="onClose"
+    bind:select="HuKouonSelect" />
+  <!-- 户口类型选择框 -->
+  <van-cell title="员工户口类型" is-link bindtap="HuKouTypeShowPopup" value="{{HuKouTypeValue}}" required />
+  <van-action-sheet show="{{ HuKouTypeShow }}" actions="{{ HuKouTypeActions }}" bind:close="onClose"
+    bind:select="HuKouTypeSelect" />
+  <!-- 血型选择框 -->
+  <van-cell title="血型" is-link bindtap="BloodShowPopup" value="{{BloodValue}}" required />
+  <van-action-sheet show="{{ BloodShow }}" actions="{{ BloodActions }}" bind:close="onClose"
+    bind:select="BloodSelect" />
+  <!-- 籍贯选择框 -->
+  <van-cell title="籍贯" is-link bindtap="NativeShowPopup" value="{{NativeValue}}" required />
+  <van-action-sheet show="{{ NativeShow }}" actions="{{ NativeActions }}" bind:close="onClose"
+    bind:select="NativeSelect" />
+  <!-- 出生国家选择框 -->
+  <van-cell title="出生国家/地区" is-link bindtap="BirthCountryShowPopup" value="{{BirthCountryValue}}" required />
+  <van-action-sheet show="{{ BirthCountryShow }}" actions="{{ BirthCountryActions }}" bind:close="onClose"
+    bind:select="BirthCountrySelect" />
+  <!-- 证件类型选择框 -->
+  <van-cell title="证件类型" is-link bindtap="IDTypeShowPopup" value="{{IDTypeValue}}" required />
+  <van-action-sheet show="{{ IDTypeShow }}" actions="{{ IDTypeActions }}" bind:close="onClose"
+    bind:select="IDTypeSelect" />
+  <!-- 证件号码 -->
+  <van-field value="{{nationalId}}" placeholder="例如：1309251980xxxx" name="nationalId" required clearable
+    icon="https://b.yzcdn.cn/vant/icon-demo-1126.png" label="证件号码" border="{{false}}" bind:change="onChange" bind:click-icon="onClickIcon"
+    type="idcard"></van-field>
+  <!-- 出生日期 -->
+  <van-cell title="出生日期" value="{{ birthdateValue }}" bind:click="birthdateonDisplay" is-link />
+  <van-calendar show="{{ birthdateshow }}" bind:close="onClose" bind:confirm="birthdateonConfirm" title="请选择出生日期" />
+  <!-- 首次参加工作日期 -->
+  <van-cell title="首次参加工作日期" value="{{ workStartDateValue }}" bind:click="workStartDateonDisplay" is-link required />
+  <van-popup show="{{workStartShow}}" bind:close="onClose" position="bottom">
+    <van-datetime-picker type="date" value="{{ workStartcurrentDate }}" min-date="{{ workStartminDate }}"
+      formatter="{{ workStartformatter }}" bind:input="workStartonInput" bind:cancel="workStartcancel"
+      bind:confirm="workStartonConfirm" />
+  </van-popup>
+  <!-- 政治面貌选择框 -->
+  <van-cell title="政治面貌" is-link bindtap="politicalShowPopup" value="{{politicalValue}}" required />
+  <van-action-sheet show="{{ politicalShow }}" actions="{{ politicalActions }}" bind:close="onClose"
+    bind:select="politicalSelect" />
+  <!-- 婚姻状况选择框 -->
+  <van-cell title="婚姻状况" is-link bindtap="marShowPopup" value="{{marValue}}" required />
+  <van-action-sheet show="{{ marShow }}" actions="{{ marActions }}" bind:close="onClose" bind:select="marSelect" />
+  <!-- 邮箱 -->
+  <van-field value="{{personalMail}}" placeholder="例如：54321@qq.com" name="personalMail" required clearable
+    icon="question-o" label="个人邮箱" border="{{false}}" bind:change="onChange" bind:click-icon="onClickIcon"></van-field>
+  <!-- 电话 -->
+  <van-field value="{{personalPhone}}" placeholder="例如：13800138000" name="personalPhone" required clearable type="digit"
+    icon="phone-o" label="个人电话" border="{{false}}" bind:change="onChange" bind:click-icon="onClickIcon"></van-field>
+  <!-- 车辆情况 -->
+  <van-cell-group title="🚗车辆情况">
+    <van-checkbox-group value="{{ carResultValue }}" bind:change="carResultValueonChange" title="车辆情况">
+      <van-cell>
+        <van-checkbox name="driveLicense" label-position="right">有驾照</van-checkbox>
+      </van-cell>
+      <van-cell>
+        <van-checkbox name="sinceDriving" label-position="right">自驾车</van-checkbox>
+      </van-cell>
+    </van-checkbox-group>
+  </van-cell-group>
+  <!-- 档案存放地 -->
+  <van-field value="{{profileAddr}}" placeholder="例如：人力资源公共服务中心" name="profileAddr" required clearable type="textarea"
+    icon="question-o" label="档案存放地" border="{{false}}" bind:change="onChange" bind:click-icon="onClickIcon"></van-field>
+  <!-- 现住有效地址 -->
+  <van-field value="{{nowAddr}}" placeholder="辽宁省铁岭市松山镇象牙山村" name="nowAddr" required clearable type="textarea"
+    icon="question-o" label="现住有效地址" border="{{false}}" bind:change="onChange" bind:click-icon="onClickIcon">
+  </van-field>
+  <!-- 户口所在地址 -->
+  <van-field value="{{HuKouAddr}}" placeholder="辽宁省铁岭市松山镇象牙山村" name="HuKouAddr" required clearable type="textarea"
+    icon="question-o" label="户口所在地址" border="{{false}}" bind:change="onChange" bind:click-icon="onClickIcon">
+  </van-field>
+  <!-- 兴趣爱好选择框 -->
+  <van-cell title="兴趣爱好" is-link bindtap="interestShowPopup" value="{{interestValue}}" required border/>
+  <van-action-sheet show="{{ interestShow }}" actions="{{ interestActions }}" bind:close="onClose"
+    bind:select="interestSelect" />
+  <!-- 英语水平选择框 -->
+  <van-cell title="英语水平" is-link bindtap="englishShowPopup" value="{{englishValue}}" required />
+  <van-action-sheet show="{{ englishShow }}" actions="{{ englishActions }}" bind:close="onClose"
+    bind:select="englishSelect" />
+  <!-- 参保起始月份 -->
+  <van-cell title="参保起始月份" value="{{ calPrdValue }}" bind:click="calPrdonDisplay" is-link required />
+  <van-popup show="{{calPrdShow}}" bind:close="onClose" position="bottom">
+    <van-datetime-picker type="year-month" value="{{ calPrdValue }}" bind:cancel="calPrdcancel"
+      bind:confirm="calPrdStartonConfirm" />
+  </van-popup>
+  <!-- 是否在该地首次参保 -->
+  <van-cell required>
+    <van-checkbox-group value="{{ isSheBaoResultValue }}" bind:change="isSheBaoResultValueonChange" title="是否在该地首次参保">
+      <van-checkbox name="isSheBaoResult" label-position="right" required>是否在该地首次参保</van-checkbox>
+    </van-checkbox-group>
+  </van-cell>
+  <view style="display:flex; align-items:center;vertical-align:center;justify-content:center;">
+    <van-button round icon="star-o" type="primary" color="" id="submitBaseInfo">提交基本信息</van-button>
+  </view>
+</view>

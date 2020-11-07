@@ -1,0 +1,5 @@
+<!--pages/subPages/family/family.wxml-->
+<view>
+  <!-- 性别选择框 -->
+  <van-cell title="家庭成员管理" is-link bind:click="showCompanyDetail" id="familyChange" value="{{familyValue}}" required />
+</view>

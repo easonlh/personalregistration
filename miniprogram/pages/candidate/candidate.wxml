@@ -1,0 +1,12 @@
+<!--pages/candidate/candidate.wxml-->
+<view class='main-wrapper' style='margin-bottom:{{tabbarHeight}}px;'>
+   <baseinfo wx:if='{{activeIndex == 0}}' onShow="{{tabbar[0].selected}}"></baseinfo>
+   <family wx:if='{{activeIndex == 1}}' onShow="{{tabbar[1].selected}}"></family>
+   <workeducation wx:if='{{activeIndex == 2}}' onShow="{{tabbar[2].selected}}"></workeducation>
+   <attachment wx:if='{{activeIndex == 3}}' onShow="{{tabbar[3].selected}}"></attachment>
+
+</view>
+<van-tabbar active="{{ activeIndex }}" bind:change="onChange">
+   <van-tabbar-item wx:for="{{tabbar}}" wx:key="index" icon="{{item.iconPath}}" info="{{item.tips}}">{{item.descr}}
+   </van-tabbar-item>
+</van-tabbar>

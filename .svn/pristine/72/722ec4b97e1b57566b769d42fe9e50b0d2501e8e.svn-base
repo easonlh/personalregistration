@@ -1,0 +1,7 @@
+<!--pages/subPages/attachment/attachment.wxml-->
+<view class='c-page-wrapper'> 
+
+    <view class='item'>{{version}}</view>
+
+</view>
+

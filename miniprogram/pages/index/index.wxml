@@ -1,0 +1,16 @@
+<image class="user-poster"
+  src="{{ 'https://bkimg.cdn.bcebos.com/pic/0823dd54564e92584c2e49e69182d158ccbf4ea4?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxNTA=,g_7,xp_5,yp_5' }}">
+</image>
+<van-row>
+
+</van-row>
+<van-cell-group title="登录信息">
+  <van-field value="{{ nationalId }}" placeholder="请输入您的身份证号" required clearable label="身份证号" icon="user-o" />
+  <van-field value="{{ phone }}" placeholder="请输入您的手机号" required clearable label="手机号" icon="phone-o" />
+  <van-field value="{{ name }}" placeholder="请输入您的姓名" required clearable label="姓名" icon="smile-o" />
+
+</van-cell-group>
+
+<view style="display:flex; align-items:center;vertical-align:center;justify-content:center;">
+  <van-button round icon="star-o" type="primary" color="" id="submit" bind:getuserinfo="getuserinfo">登录</van-button>
+</view>
